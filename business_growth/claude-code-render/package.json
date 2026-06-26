@@ -1,0 +1,14 @@
+{
+  "name": "business-growth-stages-render",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Render the Business Growth Stages animation to MP4",
+  "scripts": {
+    "render": "node render.mjs",
+    "render:hq": "node render.mjs --fps 60 --scale 2"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

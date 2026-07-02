@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<title>Outbound Click Ad — Render Harness</title>
+<link href="montserrat.css" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #182033; width: 1080px; height: 1920px; overflow: hidden; }
+  #root { width: 1080px; height: 1920px; position: relative; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React + Babel, vendored locally for a fully offline, deterministic render. -->
+  <script crossorigin src="react.production.min.js"></script>
+  <script crossorigin src="react-dom.production.min.js"></script>
+  <script src="babel.min.js"></script>
+
+  <!-- The animation source. Babel transpiles the JSX in-browser. -->
+  <script type="text/babel" src="OutboundAd.jsx" data-presets="react"></script>
+
+  <script type="text/babel" data-presets="react">
+    // Wait until OutboundAd.jsx has registered its globals, then mount the
+    // chrome-free render root and signal readiness to the headless runner.
+    (function waitAndMount() {
+      if (window.mountOutboundRender && window.OutboundAdMeta) {
+        window.mountOutboundRender(document.getElementById('root'));
+      } else {
+        setTimeout(waitAndMount, 30);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "outbound-click-ad-render",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Render the Outbound Click animated Meta ad to MP4 via headless Chromium + ffmpeg.",
+  "scripts": {
+    "render": "node render-video.mjs",
+    "render:60": "node render-video.mjs --fps 60"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}

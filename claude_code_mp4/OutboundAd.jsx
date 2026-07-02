@@ -281,7 +281,7 @@ function RevealScene({ localTime, duration }) {
       <Line localTime={localTime} delay={0.2} size={104}>It's struggling</Line>
       <Line localTime={localTime} delay={0.5} size={104}>because your leads</Line>
       <div style={{ position: 'relative', width: 'fit-content', marginTop: 6 }}>
-        <div style={{ position: 'absolute', left: -16, top: '12%', bottom: '12%', width: `calc(100% + 32px)`,
+        <div style={{ position: 'absolute', left: -16, top: '2%', bottom: '-2%', width: `calc(100% + 32px)`,
           background: BLUE, borderRadius: 10, transform: `scaleX(${Easing.easeOutExpo(hl)})`, transformOrigin: 'left',
           opacity: hl > 0 ? 1 : 0 }}/>
         <div style={{ position: 'relative' }}>
